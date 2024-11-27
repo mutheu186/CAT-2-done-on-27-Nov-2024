@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Account</title>
+    <style>
+        body {
+            margin: 20px;
+            padding: 20px;
+        }
+        form {
+            max-width: 600px;
+            margin: auto;
+        }
+        h1{
+            text-align: center;
+        }
+        .form-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        label {
+            flex: 0 0 150px;
+            text-align: left;
+            margin-right: 10px;
+        }
+        input, select, button {
+            flex: 1;
+            padding: 10px;
+        }
+        .buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 15px;
+            margin-right: 10px;
+        }
+        p{
+            margin-left: 160px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Register Account</h1>
+    <form id="register account">
+        <div class="form-group">
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" minlength="4" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" minlength="4" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="john@gmail" required>
+        </div>
+        <div>
+            <p>Format:john@gmail.com</p>
+        </div>
+        
+        <div class="form-group">
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" pattern="\d{10}" placeholder="1111111111111111" required>
+        </div>
+        <div>
+            <p>Format:0XXX-XXX-XXX</p>
+        </div>
+        
+        <div class="form-group">
+            <label for="zip">ZIP Code:</label>
+            <input type="text" id="zip" name="zip" pattern="\d{5}\d{9}" placeholder="1111111111111111" required>
+        </div>
+        <div>
+            <p>Format:Use 5 or 9 digits Zip Code</p>
+        </div>
+        
+        <div class="form-group">
+            <label for="cardType">Card Type:</label>
+            <select id="cardType" name="cardType" required>
+                <option value="visa">Visa</option>
+                <option value="creditcard">CreditCard</option>
+                <option value="debitcard">DebitCard</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="cardNumber">Card Number:</label>
+            <input type="text" id="cardNumber" name="cardNumber" pattern="\d{16}" placeholder="1111111111111111" required>
+        </div>
+        <div>
+            <p>Format:1111-2222-3333-4444</p>
+        </div>
+        
+        <div class="form-group">
+            <label for="expiryDate">Expiration Date:</label>
+            <input type="month" id="expiryDate" name="expiryDate" required>
+        </div>
+        <div>
+            <p>Format:YYYY-MM-DD</p>
+        </div>
+        
+        <div class="buttons">
+            <button type="button" onclick="register()">Register</button>
+            <button type="reset">Clear Form</button>
+        </div>
+    </form>
+
+    <script>
+        function register() {
+            const form = document.getElementById('registrationForm');
+            
+            const username = document.getElementById('username').value;
+        if (username.length < 4) {
+            document.getElementById('usernameError').textContent = "User name must be at least 4 characters.";
+            valid = false;
+        }
+
+        const password = document.getElementById('password').value;
+        if (password.length < 4) {
+            document.getElementById('passwordError').textContent = "Password must be at least 4 characters.";
+            valid = false;
+        }
+
+        const confirmPassword = document.getElementById('confirmPassword').value;
+        if (confirmPassword !== password) {
+            document.getElementById('confirmPasswordError').textContent = "Passwords do not match.";
+            valid = false;
+        }
+
+        const email = document.getElementById('email').value;
+        const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        if (!emailRegex.test(email)) {
+            document.getElementById('emailError').textContent = "Invalid email format.";
+            valid = false;
+        }
+
+        const phone = document.getElementById('phone').value;
+        const phoneRegex = /^\d{3}-\d{3}-\d{4}$/;
+        if (!phoneRegex.test(phone)) {
+            document.getElementById('phoneError').textContent = "Invalid phone number format.";
+            valid = false;
+        }
+
+        const zip = document.getElementById('zip').value;
+        const zipRegex = /^\d{5}$/;
+        if (!zipRegex.test(zip)) {
+            document.getElementById('zipError').textContent = "Invalid Zip Code.";
+            valid = false;
+        }
+
+        const cardNumber = document.getElementById('cardNumber').value;
+        const cardNumberRegex = /^\d{16}$/;
+        if (!cardNumberRegex.test(cardNumber)) {
+            document.getElementById('cardNumberError').textContent = "Invalid card number format.";
+            valid = false;
+        }
+
+        const expirationDate = document.getElementById('expirationDate').value;
+        if (!expirationDate) {
+            document.getElementById('expirationDateError').textContent = "Invalid date format.";
+            valid = false;
+        }
+
+        if (valid) {
+            alert("Form submitted successfully!");
+        }
+    
+            if (form.checkValidity()) {
+                alert('Registration successful!');
+            } else {
+                alert('Please fill out the form correctly.');
+            }
+        }
+    </script>
+</body>
+</html>

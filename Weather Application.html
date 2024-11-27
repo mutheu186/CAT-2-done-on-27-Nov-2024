@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body{
+            background-color:#f9f7fe;
+        }
+        a{
+            color: rgb(123,3,123);
+        }
+        header{
+            padding: 0 0 10px 0;
+            border-top: 5px solid rgb(175,172,172);
+            text-align: center;
+            text-decoration: underline;
+        }
+        h3{
+            padding: 40px 0 0 0;
+            border-top: 5px solid rgb(175,172,172);
+            font-size: 30px;
+            line-height: 30px;
+            text-transform: capitalize;
+        }
+        .weather-app{
+            background-color: rgb(175,172,172);
+            max-width: 600px;
+            margin: 100px auto;
+            padding: 30px;
+            border-radius: 30px;
+        }
+        h2{
+            color: rgb(81,49,10);
+        }
+        .weather-app-temperature-container{
+            display: flex;
+            padding: 40px 0 0 0;
+            border-top: 30px solid rgb(175,172,172);
+            line-height: 30px;
+            text-transform: capitalize;
+        }
+        .weather-data{
+            display: flex;
+            justify-content: space-between;
+        }
+        .weather-app-icon{
+            height: 20px;
+            width:20px;
+            line-height: 20px;
+            padding-bottom: 10px;
+            margin-top: 3px;
+        }
+        .Humidity{
+            color: rgb(123,3,123);
+            font-weight: bold;
+        }
+        .form-input{
+            text-decoration: solid;
+            border: none;
+            width: 400px;
+            border-color: blueviolet;
+            border-radius: 5px;
+            font-size: 20px;
+            padding: 10px 15px;
+        }
+        .weather-app-temperature{
+            font-size: 80px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .weather-app-unit{
+            margin-left: 16px;
+            font-size: 50px;
+            font-weight: bold;
+        }
+        button{
+            border: none;
+            background-color: rgb(123,3,123);
+            color: whitesmoke;
+            padding: 10px 15px;
+            font-size: 20px;
+            text-transform: uppercase;
+            margin-left: 10px;
+            border-radius: 10px;
+        }
+        footer{
+            padding: 0 0 10px 0;
+            border-top: 5px solid rgb(175,172,172);
+            text-align: center;
+            color: rba(0,0,0,0,0.5);
+            font-size: 13px;
+            color: rgba(39, 33, 66, 0.4);
+}
+        
+        .week {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .day {
+            text-align: center;
+            color: rgb(123,3,123);
+        }
+        .emoji {
+            font-size: 2em;
+            margin: 5px 0;
+        }
+        .temps {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+        }
+        .temp {
+            font-size: 1.2em;
+            color: rgb(123,3,123);
+  
+        }
+        .temp.fade {
+            opacity: 0.5; /* Fading effect */
+        }
+
+    </style>
+    <div class="weather-app">
+        <header>
+            <div>
+                <h2>
+                    Welcome to Our Weather application
+                </h2>
+            </div>
+        </header>
+        <main>
+            <div>
+                <form action=""class="search-form"id="search-form">
+                    <input type="search"name="city"id="city-name"placeholder="Enter city name"
+                    required class="form-input"/>
+                    <button>search</button>
+                </form>
+            </div>
+            <div class="weather-data">
+                <h3>Paris</h3>
+            
+                <div class="weather-app-temperature-container ">
+                    <div class=""id="weather-app-icon">
+                        <img src="https://whatemoji.org/wp-content/uploads/2020/07/Cloud-Emoji.png" 
+                        alt="Cloud-Emoji" style="max-width: 30px; max-height: 30px;">
+                    </div>
+                    <div class="weather-app-unit">12</div>
+                    <div class="weather-app-temperture"id="currenttemperaturevalue" >°C</div>
+                  
+                </div>
+            </div>
+            <div>
+                <p>
+                    <span id="currenttime">
+                        Tuesday
+                        14.40
+                    </span>
+                    <span id="weatherdescription">
+                        scattered clouds
+                    </span>
+                    <br/>
+                    Humidity:
+                    <span id="Humidity"class="Humidity">
+                        66
+                    </span>
+                    ,Wind Speed:
+                    <span id="windspeed">
+                        4.3
+                    </span>
+                </p>
+            </div>
+            <div class="week">
+                <div class="day">
+                    <div>Mon</div>
+                    <div class="emoji"> <img src="https://whatemoji.org/wp-content/uploads/2020/07/Sun-Behind-Rain-Cloud-Emoji-1024x1024.png" 
+                        alt="Sun-Behind-Rain-Cloud-Emoji" style="max-width: 30px; max-height: 30px;">
+                    </div>
+                    <div class="temps">
+                        <div class="temp">15°</div>
+                        <div class="temp fade">19°</div>
+                    </div>
+                </div>
+                <div class="day">
+                    <div>Tue</div>
+                    <div class="emoji">
+                        <img src="https://whatemoji.org/wp-content/uploads/2020/07/Sun-Behind-Rain-Cloud-Emoji-1024x1024.png" 
+                        alt="Sun-Behind-Rain-Cloud-Emoji" style="max-width: 30px; max-height: 30px;">
+                    </div>
+                    <div class="temps">
+                        <div class="temp">15°</div>
+                        <div class="temp fade">19°</div>
+                    </div>
+                </div>
+                <div class="day">
+                    <div>Wed</div>
+                    <div class="emoji">
+                        <img src="https://whatemoji.org/wp-content/uploads/2020/07/Sun-Behind-Rain-Cloud-Emoji-1024x1024.png" 
+                        alt="Sun-Behind-Rain-Cloud-Emoji" style="max-width: 30px; max-height: 30px;">
+                    </div>
+                    <div class="temps">
+                        <div class="temp">15°</div>
+                        <div class="temp fade">19°</div>
+                    </div>
+                </div>
+                <div class="day">
+                    <div>Thu</div>
+                    <div class="emoji">
+                        <img src="https://whatemoji.org/wp-content/uploads/2020/07/Sun-Behind-Rain-Cloud-Emoji-1024x1024.png" 
+                        alt="Sun-Behind-Rain-Cloud-Emoji" style="max-width: 30px; max-height: 30px;">
+                    </div>
+                    <div class="temps">
+                        <div class="temp">15°</div>
+                        <div class="temp fade">19°</div>
+                    </div>
+                </div>
+                <div class="day">
+                    <div>Fri</div>
+                    <div class="emoji">
+                        <img src="https://whatemoji.org/wp-content/uploads/2020/07/Sun-Behind-Rain-Cloud-Emoji-1024x1024.png" 
+                        alt="Sun-Behind-Rain-Cloud-Emoji" style="max-width: 30px; max-height: 30px;">
+                    </div>
+                    <div class="temps">
+                        <div class="temp">15°</div>
+                        <div class="temp fade">19°</div>
+                    </div>
+                </div>
+                <div class="day">
+                    <div>Sat</div>
+                    <div class="emoji">
+                        <img src="https://whatemoji.org/wp-content/uploads/2020/07/Sun-Behind-Rain-Cloud-Emoji-1024x1024.png" 
+                        alt="Sun-Behind-Rain-Cloud-Emoji" style="max-width: 30px; max-height: 30px;">
+                    </div>
+                    <div class="temps">
+                        <div class="temp">15°</div>
+                        <div class="temp fade">19°</div>
+                    </div>
+                </div>
+                <div class="day">
+                    <div>Sun</div>
+                    <div class="emoji"> <img src="https://whatemoji.org/wp-content/uploads/2020/07/Sun-Behind-Rain-Cloud-Emoji-1024x1024.png" 
+                        alt="Sun-Behind-Rain-Cloud-Emoji" style="max-width: 30px; max-height: 30px;"></div>
+                    <div class="temps">
+                        <div class="temp">15°</div>
+                        <div class="temp fade">19°</div>
+                    </div>
+                </div>
+            </div>        
+        </main>
+        <footer>
+            <div>
+                coded by <a href="https://github.com/Mutheu186"target="_blank">Maureen Muthui</a>
+                and is on <a href="https://github.com/Mutheu186/week7-Weather-API"target="_blank">Github</a>
+                and hosted by <a href="https://github.com/Mutheu186.netlify.app/"target="_blank">Netlify</a>
+                <br>
+                The design was done using <a href="https://www.figma.com/"target="_blank">Figma</a>
+            </div>
+        </footer>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
